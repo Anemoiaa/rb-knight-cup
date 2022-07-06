@@ -211,3 +211,8 @@ body {
 .next-step {
   background-color: #F5F5F5;
 }
+
+.active-step {
+  background-color: #E9FAF1;
+  border: 1px solid #E9FAF1;
+}
