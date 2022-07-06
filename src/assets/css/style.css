@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -34,20 +33,106 @@ h6 {
 
 html,
 body {
-  height: 100%;
   line-height: 1;
   font-size: 16px;
   color: #000;
 }
 
-
 .wrapper {
-  min-height: 100%;
-  overflow: hidden;
+  position: relative;
+  min-width: 1920px;
+  min-height: 1080px;
 }
 
-.container {
-  max-width: 1920px;
-  margin: 0px auto;
 
+.leftside {
+  position: absolute;
+  width: 923px;
+  height: 100%;
+}
+
+.landing_bg {
+  background-image: url('../img/landing-page-scrolling-photo.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.leftside__header {
+  position: absolute;
+  width: 100%;
+  height: 84px;
+  background: #7025FB;
+}
+
+.leftside__header img {
+  margin-left: 60px;
+  margin-top: 30px;
+}
+
+.rightside {
+  position: absolute;
+  left: 923px;
+  width: 997px;
+  height: 100%;
+  background-color: #FD5334;
+}
+
+.rightside__first-page {
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* rihtside first-page text */
+
+.rightside__first-page div:nth-child(1) {
+  position: absolute;
+  left: 85px;
+  top: 265px;
+  font-size: 80px;
+  line-height: 109.12px;
+  font-weight: 800;
+}
+
+.rightside__first-page div:nth-child(2) {
+  position: absolute;
+  top: 306px;
+  right: 254px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #212529;
+}
+
+.rightside__first-page div:nth-child(3) {
+  position: absolute;
+  left: 85px;
+  top: 390px;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 109.12px;
+}
+
+/* get started btn */
+
+.rightside__first-page .btn {
+  position: absolute;
+  top: 600px;
+  left: 85px;
+  padding: 13px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #212529;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+
+.rightside__first-page .btn:hover {
+  outline: 4px solid #C2A5F9;
 }
