@@ -51,6 +51,12 @@ body {
   height: 100%;
 }
 
+.registration-bg {
+  background-image: url('../img/registartion-page-photo.png');
+  background-repeat: no-repeat;
+  background-position: 0 84px;
+}
+
 .landing_bg {
   background-image: url('../img/landing-page-scrolling-photo.png');
   background-repeat: no-repeat;
@@ -64,6 +70,7 @@ body {
   background: #7025FB;
 }
 
+
 .leftside__header img {
   margin-left: 60px;
   margin-top: 30px;
@@ -74,8 +81,32 @@ body {
   left: 923px;
   width: 997px;
   height: 100%;
+
+}
+
+.bg_red {
   background-color: #FD5334;
 }
+
+
+.rightside__header {
+  width: 100%;
+  height: 84px;
+  border-bottom: 1px solid #B9B4C3;
+  display: flex;
+  align-items: center;
+
+}
+
+.rightside__header__title {
+  margin-left: 60px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #212529;
+  text-transform: capitalize;
+}
+
 
 .rightside__first-page {
   height: 100%;
@@ -135,4 +166,48 @@ body {
 
 .rightside__first-page .btn:hover {
   outline: 4px solid #C2A5F9;
+}
+
+.rightside__reg-page {
+  padding-left: 60px;
+  margin-top: 60px;
+  height: 100%;
+}
+
+.reg-steps {
+  width: 366px;
+  display: flex;
+  justify-content: space-between
+}
+
+.step-one, .step-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-rect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #E5E6E8;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #212529;
+}
+
+.step-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+}
+
+.next-step {
+  background-color: #F5F5F5;
 }
