@@ -30,6 +30,14 @@
         </div>
       </div>
       <div class="rightside__reg-page">
+        <div class="error-modal">
+          <div id="error-modal-close-btn" class="error-modal__close-btn"></div>
+          <div class="error-type">
+            <img src="./assets/icons/exclamation-circle-fill.svg" alt="">
+            <span id="error-type">Invalid type</span>
+          </div>
+          <div class="error-message" id="error-message">Error Message</div>
+        </div>
         <div class="reg-steps">
           <div class="step-one">
             <div class="step-rect">1</div>
@@ -45,41 +53,30 @@
             <div>Personal information</div>
             <div>This is basic informaton fields</div>
           </div>
-          <form class="form-block__info-form">
-            <input type="text" id="name" 
-              placeholder="Name *" 
-              required
-              autocomplete="off"
+          <form id="info-form">
+            <div class="form-block__info-form">
+              <input type="text" id="name" placeholder="Name *" autocomplete="off">
+              <img class="hidden succsess-name" src="./assets/icons/check-circle-fill.svg" alt="">
+              <input type="email" id="email" placeholder="Email *" autocomplete="off">
+              <img class="hidden succsess-email" src="./assets/icons/check-circle-fill.svg" alt="">
+              <input type="tel" id="tel" placeholder="Phone number *" autocomplete="off">
+              <img class="hidden succsess-tel" src="./assets/icons/check-circle-fill.svg" alt="">
+              <input type="text" id="birth_day" placeholder="Date of birth *"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
               >
-            <img class="hidden" src="./assets/icons/check-circle-fill.svg" alt="">
-            <input type="email" id="email" placeholder="Email *" required>
-            <img class="hidden" src="./assets/icons/check-circle-fill.svg" alt="">
-            <input type="tel"
-              id="tel"
-              pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
-              placeholder="Phone number *"
-              required
-            >
-            <img class="hidden" src="./assets/icons/check-circle-fill.svg" alt="">
-            <input type="text" 
-              id="birth_day"
-              placeholder="Date of birth *"
-              onfocus="(this.type='date')"
-              min="1920-01-01"
-              max="2006-12-31" 
-              required
-            >
-            <img class="hidden" src="./assets/icons/check-circle-fill.svg" alt="">
+              <img class="hidden succsess-birth" src="./assets/icons/check-circle-fill.svg" alt="">
+            </div>
+            <div class="navigation-btn-block">
+              <button class="btn btn-back">
+                <span>Back</span>
+              </button>
+              <button type="submit" class="btn btn-next">
+                <span>Next</span>
+                <img src="./assets/icons/arrow-right-circle .svg" alt="">
+              </button>
+            </div>
           </form>
-        </div>
-        <div class="navigation-btn-block">
-          <button class="btn btn-back">
-            <span>Back</span>
-          </button>
-          <button class="btn">
-            <span>Next</span>
-            <img src="./assets/icons/arrow-right-circle .svg" alt="">
-          </button>
         </div>
       </div>
     </div>

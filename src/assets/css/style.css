@@ -31,12 +31,14 @@ h6 {
   font-size: inherit;
 }
 
+
 html,
 body {
   line-height: 1;
   font-size: 16px;
   color: #000;
 }
+
 
 .wrapper {
   position: relative;
@@ -173,7 +175,15 @@ body {
   color: #212529;
 }
 
-.btn:hover {
+.btn-start:hover {
+  outline: 4px solid #C2A5F9;
+}
+
+.btn-back:hover {
+  background-color: #B9B4C3;
+}
+
+.btn-next:hover {
   outline: 4px solid #C2A5F9;
 }
 
@@ -225,6 +235,7 @@ body {
   background-color: #E9FAF1;
   border: 1px solid #E9FAF1;
 }
+
 
 .form-block {
   margin-top: 120px;
@@ -310,4 +321,62 @@ body {
   width: 775px;
   display: flex;
   justify-content: space-between
+}
+
+
+.error-modal {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 12px;
+  min-width: 350px;
+  min-height: 87px;
+  top: 226px;
+  right: 39px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  font-family: 'Open Sans';
+  color: #212529;
+}
+
+
+.error-type {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #DC3545;
+}
+
+.error-type span {
+  margin-left: 8px;
+}
+
+.error-message {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.error-modal__close-btn {
+  cursor: pointer;
+  position: absolute;
+}
+
+.error-modal__close-btn::before, .error-modal__close-btn::after {
+  content: "";
+  position: absolute;
+  top: -22px;
+  right: -324px;
+  width: 12px; 
+  height: 2px; 
+  background-color: #95939A;
+}
+
+.error-modal__close-btn::before {
+  transform: rotate(45deg);
+}
+
+.error-modal__close-btn::after {
+  transform: rotate(-45deg);
 }

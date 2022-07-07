@@ -1,5 +1,5 @@
 import { isValid } from './validatios';
-
+import { errorModal, showErrorModal } from './error-modal';
 
 
 const validField = {
@@ -18,6 +18,9 @@ function formIsValid(element) {
 const personalInfoForm = document.querySelector('#info-form');
 const personalInfoFormField = document.querySelectorAll('input');
 personalInfoFormField.forEach(input => {
+    input.addEventListener('focus', (e) => {
+        if(input.classList.contains('invalid')) input.classList.remove('invalid');
+    })
     input.addEventListener('blur', (e) => {
         if(isValid(input.id, input.value)) {
             validField[input.id] = true;
@@ -28,7 +31,7 @@ personalInfoFormField.forEach(input => {
             input.nextElementSibling.classList.add('hidden');
             if(input.value.length > 0 ) input.classList.add('invalid');
             else input.classList.remove('invalid');
-            
+            showErrorModal(input.id);
         }
     });
 });
