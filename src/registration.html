@@ -1,45 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/favicon.ico">
-    <title>Redberry Knight Cup</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
 
-    <div class="wrapper">
-      <div class="leftside registration-bg">
-        <div class="leftside__header">
-          <img src="./assets/img/khight-cup-logo.png" alt="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico">
+  <title>Redberry Knight Cup</title>
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="leftside registration-bg">
+      <div class="leftside__header">
+        <img src="./assets/img/khight-cup-logo.png" alt="">
+      </div>
+    </div>
+    <div class="rightside">
+      <div class="rightside__header">
+        <div class="rightside__header__title">
+          <h1>Start creating your account</h1>
         </div>
       </div>
-      <div class="rightside">
-        <div class="rightside__header">
-            <div class="rightside__header__title">
-                Start creating your account
-            </div>
+      <div class="rightside__reg-page">
+        <div class="reg-steps">
+          <div class="step-one">
+            <div class="step-rect">1</div>
+            <div class="step-title">Personal information</div>
+          </div>
+          <div class="step-two">
+            <div class="step-rect next-step">2</div>
+            <div class="step-title">Chess experience</div>
+          </div>
         </div>
-        <div class="rightside__reg-page">
-            <div class="reg-steps">
-                <div class="step-one">
-                    <div class="step-rect">1</div>
-                    <div class="step-title">Personal information</div>
-                </div>
-                <div class="step-two">
-                    <div class="step-rect next-step">2</div>
-                    <div class="step-title">Chess experience</div>
-                </div>
-            </div>
+        <div class="form-block">
+          <div class="form-block__title">
+            <div>Personal information</div>
+            <div>This is basic informaton fields</div>
+          </div>
+          <form class="form-block__info-form">
+            <input type="text" id="name" 
+              placeholder="Name *" 
+              required
+              autocomplete="off"
+              >
+            <img class="hidden" src="./assets/icons/check-circle-fill.svg" alt="">
+            <input type="email" id="email" placeholder="Email *" required>
+            <img class="hidden" src="./assets/icons/check-circle-fill.svg" alt="">
+            <input type="tel"
+              id="tel"
+              pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+              placeholder="Phone number *"
+              required
+            >
+            <img class="hidden" src="./assets/icons/check-circle-fill.svg" alt="">
+            <input type="text" 
+              id="birth_day"
+              placeholder="Date of birth *"
+              onfocus="(this.type='date')"
+              min="1920-01-01"
+              max="2006-12-31" 
+              required
+            >
+            <img class="hidden" src="./assets/icons/check-circle-fill.svg" alt="">
+          </form>
+        </div>
+        <div class="navigation-btn-block">
+          <button class="btn btn-back">
+            <span>Back</span>
+          </button>
+          <button class="btn">
+            <span>Next</span>
+            <img src="./assets/icons/arrow-right-circle .svg" alt="">
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="./script.js"></script>
-  </body>
+  <script src="./script.js"></script>
+</body>
+
 </html>
