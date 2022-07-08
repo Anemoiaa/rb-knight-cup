@@ -219,7 +219,10 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify(user)
         })
         .then(response => {
-            if(response.status == 201) console.log('end'); 
+            if(response.status == 201) {
+                goToFinalPage();
+                localStorage.clear();
+            } 
             else throw new Error();
         })
         .catch(err => {
@@ -296,6 +299,9 @@ document.addEventListener("DOMContentLoaded", () => {
         secondStepRect.classList.add('active-step');
     }
 
+    function goToFinalPage() {
+        window.location.replace('final.html');
+    }
 
 });
 

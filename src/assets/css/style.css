@@ -59,6 +59,12 @@ body {
   background-position: 0 34px;
 }
 
+.final-bg {
+  background-image: url('../img/final-bg.png');
+  background-repeat: no-repeat;
+  background-position: 0 84px;
+}
+
 .registration-bg {
   background-image: url('../img/registartion-page-photo.png');
   background-repeat: no-repeat;
@@ -539,3 +545,20 @@ body {
 #exp-form .navigation-btn-block {
   margin-top: 213px;
 }
+
+.rightside__final-page {
+  width: 100%;
+  text-align: center;
+  margin-top: 416px;
+}
+
+.final-page__title {
+  margin-top: 16px;
+  font-family: 'Nunito';
+  font-weight: 800;
+  font-size: 36px;
+  color: #000;
+  line-height: 150%;
+}
+
+
