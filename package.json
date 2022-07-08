@@ -18,5 +18,8 @@
     "gulp": "^4.0.2",
     "webpack": "^5.73.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "validator": "^13.7.0"
   }
 }

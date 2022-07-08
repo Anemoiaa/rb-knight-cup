@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico">
+  <title>Redberry Knight Cup</title>
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="leftside registration-bg">
+      <div class="leftside__header">
+        <img src="./assets/img/khight-cup-logo.png" alt="">
+      </div>
+      <div class="leftside__reg-page-title">
+        <div>“When you see a good move,<br>look for a better one.”</div>
+        <div>-Emanuel Lasker</div>
+      </div>
+    </div>
+    <div class="rightside">
+      <div class="rightside__header">
+        <div class="rightside__header__title">
+          <h1>Start creating your account</h1>
+        </div>
+      </div>
+      <div class="rightside__reg-page">
+        <div class="error-modal">
+          <div id="error-modal-close-btn" class="error-modal__close-btn"></div>
+          <div class="error-type">
+            <img src="./assets/icons/exclamation-circle-fill.svg" alt="">
+            <span id="error-type">Invalid type</span>
+          </div>
+          <div class="error-message" id="error-message">Error Message</div>
+        </div>
+        <div class="reg-steps">
+          <div class="step-one">
+            <div class="step-rect">1</div>
+            <div class="step-title">Personal information</div>
+          </div>
+          <div class="step-two">
+            <div class="step-rect next-step">2</div>
+            <div class="step-title">Chess experience</div>
+          </div>
+        </div>
+        <div class="form-block">
+          <div class="form-block__title">
+            <div>Personal information</div>
+            <div>This is basic informaton fields</div>
+          </div>
+          <form id="info-form" class="hidden">
+            <div class="form-block__info-form">
+              <input type="text" id="name" placeholder="Name *" autocomplete="off">
+              <img class="hidden succsess-name" src="./assets/icons/check-circle-fill.svg" alt="">
+              <input type="email" id="email" placeholder="Email *" autocomplete="off">
+              <img class="hidden succsess-email" src="./assets/icons/check-circle-fill.svg" alt="">
+              <input type="tel" id="tel" placeholder="Phone number *" autocomplete="off">
+              <img class="hidden succsess-tel" src="./assets/icons/check-circle-fill.svg" alt="">
+              <input type="text" id="birth_day" placeholder="Date of birth *"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+              >
+              <img class="hidden succsess-birth" src="./assets/icons/check-circle-fill.svg" alt="">
+            </div>
+            <div class="navigation-btn-block">
+              <a  href='index.html' class="btn btn-back">
+                <span>Back</span>
+              </a>
+              <button type="submit" class="btn btn-next">
+                <span>Next</span>
+                <img src="./assets/icons/arrow-right-circle .svg" alt="">
+              </button>
+            </div>
+          </form>
+
+          <form id="exp-form" class="hidden">
+            <div class="form-block__exp-form">
+              <div class="dropdown" id="select-level">
+                <span>level of knowledge <span>*</span></span>
+                <img class="dropdown-icon" src="./assets/icons/chevron-down.svg" alt="">
+                <div class="dropdown-content">
+                  <div class="level-card" data-level="beginner">Beginner</div>
+                  <div class="level-card" data-level="normal">Intermediate</div>
+                  <div class="level-card" data-level="professional">Professional</div>
+                </div>
+              </div>
+
+              <div class="dropdown" id="select-character">
+                  <span>Choose your character <span>*</span></span>
+                  <img class="dropdown-icon" src="./assets/icons/chevron-down.svg" alt="">
+                <div class="dropdown-content">
+                </div>
+              </div>
+              <div class="checkbox-block">
+                <div class="checkbox-block__title">
+                  Have you participated in the Redberry Championship? <span>*</span>
+                </div>
+                <div class="checkbox-block__buttons">
+                  <label for="checkbox-yes">
+                    <input type="checkbox" name="checkbox-yes" value="true" checked>Yes
+                  </label>
+                  <label for="checkbox-no">
+                    <input type="checkbox" name="checkbox-no" value="false">No
+                  </label>
+                </div>  
+              </div>
+            </div>
+            <div class="navigation-btn-block">
+              <span id='to-step-one' class="btn btn-back">
+                <span>Back</span>
+              </span>
+              <button type="submit" class="btn btn-next">
+                <span>Next</span>
+                <img src="./assets/icons/arrow-right-circle .svg" alt="">
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
