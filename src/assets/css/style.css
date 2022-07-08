@@ -78,6 +78,27 @@ body {
   margin-top: 30px;
 }
 
+.leftside__reg-page-title {
+  position: absolute;
+  top: 295px;
+  left: 132px;
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 55px;
+  text-transform: uppercase;
+  color: #212529;
+}
+
+.leftside__reg-page-title div:nth-child(2) {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 55px;
+  color: #E5E6E8;
+}
+
+
 .rightside {
   position: absolute;
   left: 923px;
