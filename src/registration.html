@@ -57,7 +57,7 @@
             <div>Personal information</div>
             <div>This is basic informaton fields</div>
           </div>
-          <form id="info-form">
+          <form id="info-form" class="hidden">
             <div class="form-block__info-form">
               <input type="text" id="name" placeholder="Name *" autocomplete="off">
               <img class="hidden succsess-name" src="./assets/icons/check-circle-fill.svg" alt="">
@@ -72,9 +72,52 @@
               <img class="hidden succsess-birth" src="./assets/icons/check-circle-fill.svg" alt="">
             </div>
             <div class="navigation-btn-block">
-              <button class="btn btn-back">
+              <a  href='index.html' class="btn btn-back">
                 <span>Back</span>
+              </a>
+              <button type="submit" class="btn btn-next">
+                <span>Next</span>
+                <img src="./assets/icons/arrow-right-circle .svg" alt="">
               </button>
+            </div>
+          </form>
+
+          <form id="exp-form" class="hidden">
+            <div class="form-block__exp-form">
+              <div class="dropdown" id="select-level">
+                <span>level of knowledge <span>*</span></span>
+                <img class="dropdown-icon" src="./assets/icons/chevron-down.svg" alt="">
+                <div class="dropdown-content">
+                  <div class="level-card" data-level="beginner">Beginner</div>
+                  <div class="level-card" data-level="normal">Intermediate</div>
+                  <div class="level-card" data-level="professional">Professional</div>
+                </div>
+              </div>
+
+              <div class="dropdown" id="select-character">
+                  <span>Choose your character <span>*</span></span>
+                  <img class="dropdown-icon" src="./assets/icons/chevron-down.svg" alt="">
+                <div class="dropdown-content">
+                </div>
+              </div>
+              <div class="checkbox-block">
+                <div class="checkbox-block__title">
+                  Have you participated in the Redberry Championship? <span>*</span>
+                </div>
+                <div class="checkbox-block__buttons">
+                  <label for="checkbox-yes">
+                    <input type="checkbox" name="checkbox-yes" value="true" checked>Yes
+                  </label>
+                  <label for="checkbox-no">
+                    <input type="checkbox" name="checkbox-no" value="false">No
+                  </label>
+                </div>  
+              </div>
+            </div>
+            <div class="navigation-btn-block">
+              <span id='to-step-one' class="btn btn-back">
+                <span>Back</span>
+              </span>
               <button type="submit" class="btn btn-next">
                 <span>Next</span>
                 <img src="./assets/icons/arrow-right-circle .svg" alt="">
