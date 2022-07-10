@@ -27,6 +27,100 @@ document.addEventListener("DOMContentLoaded", () => {
         birth_day: false,
     };
 
+    
+
+    // fill personal info fields from localstorage
+
+    personalInfoFormFields.forEach(input => {
+        input.value = localStorage.getItem(input.id);
+        if(input.value)
+            validField[input.id] = true;
+        if(input.value.length > 0)
+            input.nextElementSibling.classList.remove('hidden');
+    });
+
+    // fill exp info field from localstorage
+    if(localStorage.getItem('level')) {
+        const level = JSON.parse(localStorage.getItem('level'));
+        document.querySelector('#select-level span').innerHTML = level.title;
+        document.querySelector('#select-level span').setAttribute('data-level', level.dataset);
+    }
+    if(localStorage.getItem('character')) {
+        const character = JSON.parse(localStorage.getItem('character'));
+        document.querySelector('#select-character span').innerHTML = character.name;
+        document.querySelector('#select-character span').setAttribute('data-character_id', character.id);
+    }
+
+
+
+    
+
+    // Event Listeners 
+
+    toStepOne.addEventListener('click', showInfoPage);
+    personalInfoForm.addEventListener('submit', submitFirstStep);
+    expInfoForm.addEventListener('submit', submitSecondStep);
+    
+
+    // Live Validation
+    personalInfoFormFields.forEach(input => {
+        input.addEventListener('focus', (e) => {
+            if(input.classList.contains('invalid')) 
+                input.classList.remove('invalid');
+        })
+        input.addEventListener('blur', (e) => {
+            if(isValid(input.id, input.value)) {
+                validField[input.id] = true;
+                input.nextElementSibling.classList.remove('hidden');
+                input.classList.remove('invalid');
+                localStorage.setItem(input.id, input.value);
+            } else {
+                validField[input.id] = false;
+                input.nextElementSibling.classList.add('hidden');
+                if(input.value.length > 0 ) {
+                    input.classList.add('invalid');
+                    showErrorModal(input.id);
+                }
+                else input.classList.remove('invalid');
+                localStorage.removeItem(input.id);
+            }
+        });
+    });
+
+
+    // Dropdown
+    document.querySelectorAll('.dropdown-icon')
+    .forEach(drop => {
+        drop.addEventListener('click', (e) => {
+            const dropdown = e.target.parentNode;
+            const content = dropdown.querySelector('.dropdown-content');
+            const icon = dropdown.querySelector('img');
+            content.classList.toggle('flex');
+            icon.classList.toggle('dropdown-icon-rotate');
+        })
+    })
+
+    // Level card
+    levelCards.forEach(card => {
+        card.addEventListener('click' ,() => {
+            const cardTitle = card.innerHTML;
+            document.querySelector('#select-level span').innerHTML = cardTitle;
+            document.querySelector('#select-level span').setAttribute('data-level', card.dataset.level);
+            localStorage.setItem('level', JSON.stringify({title: cardTitle, dataset: card.dataset.level}));
+
+            // Close dropdown
+            const dropdown =  document.querySelector('#select-level .dropdown-content');
+            const icon = document.querySelector('#select-level img');
+            
+            dropdown.classList.remove('flex');
+            dropdown.classList.add('hidden');
+            
+            icon.classList.remove('dropdown-icon-rotate');
+
+            
+        })
+    })
+
 
     function showInfoPage() {
 
@@ -60,97 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setCompleteIcons();
         
     }
-
-    // fill personal info fields from localstorage
-
-    personalInfoFormFields.forEach(input => {
-        input.value = localStorage.getItem(input.id);
-        if(input.value)
-            validField[input.id] = true;
-        if(input.value.length > 0)
-            input.nextElementSibling.classList.remove('hidden');
-    });
-
-    // fill exp info field from localstorage
-    if(localStorage.getItem('level')) {
-        const level = JSON.parse(localStorage.getItem('level'));
-        document.querySelector('#select-level span').innerHTML = level.title;
-        document.querySelector('#select-level span').setAttribute('data-level', level.dataset);
-    }
-    if(localStorage.getItem('character')) {
-        const character = JSON.parse(localStorage.getItem('character'));
-        document.querySelector('#select-character span').innerHTML = character.name;
-        document.querySelector('#select-character span').setAttribute('data-character_id', character.id);
-    }
-    
-
-    // Event Listeners 
-
-
-    toStepOne.addEventListener('click', showInfoPage);
-    personalInfoForm.addEventListener('submit', submitFirstStep);
-    expInfoForm.addEventListener('submit', submitSecondStep);
-    
-
-    // Live Validation
-    personalInfoFormFields.forEach(input => {
-        input.addEventListener('focus', (e) => {
-            if(input.classList.contains('invalid')) 
-                input.classList.remove('invalid');
-        })
-        input.addEventListener('blur', (e) => {
-            if(isValid(input.id, input.value)) {
-                validField[input.id] = true;
-                input.nextElementSibling.classList.remove('hidden');
-                input.classList.remove('invalid');
-                localStorage.setItem(input.id, input.value);
-            } else {
-                validField[input.id] = false;
-                input.nextElementSibling.classList.add('hidden');
-                if(input.value.length > 0 ) {
-                    input.classList.add('invalid');
-                    showErrorModal(input.id);
-                }
-                else input.classList.remove('invalid');
-                localStorage.removeItem(input.id);
-            }
-        });
-    });
-
-
-    // dropdown
-    document.querySelectorAll('.dropdown-icon')
-    .forEach(drop => {
-        drop.addEventListener('click', (e) => {
-            const dropdown = e.target.parentNode;
-            const content = dropdown.querySelector('.dropdown-content');
-            const icon = dropdown.querySelector('img');
-            content.classList.toggle('flex');
-            icon.classList.toggle('dropdown-icon-rotate');
-        })
-    })
-
-    // level card
-    levelCards.forEach(card => {
-        card.addEventListener('click' ,() => {
-            const cardTitle = card.innerHTML;
-            document.querySelector('#select-level span').innerHTML = cardTitle;
-            document.querySelector('#select-level span').setAttribute('data-level', card.dataset.level);
-            localStorage.setItem('level', JSON.stringify({title: cardTitle, dataset: card.dataset.level}));
-
-            // close dropdown
-            const dropdown =  document.querySelector('#select-level .dropdown-content');
-            const icon = document.querySelector('#select-level img');
-            
-            dropdown.classList.remove('flex');
-            dropdown.classList.add('hidden');
-            
-            icon.classList.remove('dropdown-icon-rotate');
-
-            
-        })
-    })
-
 
 
     function submitFirstStep(e) {
@@ -304,5 +307,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-
-
