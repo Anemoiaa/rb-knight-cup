@@ -1,4 +1,4 @@
-import { isValid } from './validatios';
+import { isValid } from './validator';
 import { showErrorModal, closeErrorModal } from './error-modal';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     // fill personal info fields from localstorage
-
     personalInfoFormFields.forEach(input => {
         input.value = localStorage.getItem(input.id);
         if(input.value)
@@ -51,9 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('#select-character span').setAttribute('data-character_id', character.id);
     }
 
-
-
-    
 
     // Event Listeners 
 
